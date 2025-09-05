@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Dashboard - Agentic Collective</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-page">
+    <div class="background-grid"></div>
+
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">Agentic Collective</a>
+            <div class="header-controls">
+                <nav>
+                    <a href="index.html">Explore</a>
+                    <a href="dashboard.html" class="is-active">Dashboard</a>
+                </nav>
+                <button class="theme-toggle" id="theme-toggle" title="Toggle theme" aria-label="Toggle theme">
+                    <span class="sun-icon">☀️</span>
+                    <span class="moon-icon">🌙</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="dashboard-hero">
+            <div class="container">
+                <h1>Welcome Back</h1>
+                <p>Here are your favorite agents and recent conversations, ready when you are.</p>
+            </div>
+        </section>
+
+        <section class="dashboard-section">
+            <div class="container">
+                <h2>
+                    <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    Favorite Agents
+                </h2>
+                <div id="favorite-bots-grid" class="chatbot-grid">
+                    <!-- Favorite bots will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <section class="dashboard-section">
+            <div class="container">
+                <h2>
+                    <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    Recent Conversations
+                </h2>
+                <div id="recent-conversations-list" class="conversations-list">
+                     <!-- Recent conversations will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Your Name. Showcasing the future of agentic AI.</p>
+        </div>
+    </footer>
+    
+    <script>
+        const chatbotData = [
+            { id: 1, name: 'Brand Identity Architect', category: 'Creativity', icon: 'img/edit-3.svg', description: 'Generates cohesive brand names, logos, and mission statements.' },
+            { id: 2, name: 'Code Refactor Engine', category: 'Technical', icon: 'img/code.svg', description: 'Analyzes and refactors code for optimal performance and readability.' },
+            { id: 3, name: 'Market Trend Forecaster', category: 'Business', icon: 'img/cpu.svg', description: 'Predicts market shifts by analyzing vast datasets and news.' },
+            { id: 4, name: 'Creative Writing Partner', category: 'Creativity', icon: 'img/default.svg', description: 'Helps brainstorm plots, characters, and dialogue for stories.' },
+            { id: 5, name: 'Automated Content Summarizer', category: 'Productivity', icon: 'img/default.svg', description: 'Distills long articles and reports into concise summaries.' },
+            { id: 6, name: 'SQL Query Generator', category: 'Technical', icon: 'img/default.svg', description: 'Translates natural language questions into precise SQL queries.' },
+            { id: 7, name: 'Personalized Learning Tutor', category: 'Education', icon: 'img/default.svg', description: 'Creates custom lesson plans and quizzes on any subject.' },
+            { id: 8, name: 'Investment Analysis Bot', category: 'Business', icon: 'img/default.svg', description: 'Provides insights and analysis on stocks and market opportunities.' },
+            { id: 9, name: 'Meeting Assistant', category: 'Productivity', icon: 'img/default.svg', description: 'Transcribes meetings, identifies action items, and sends summaries.' },
+        ];
+        
+        const favoritesGrid = document.getElementById('favorite-bots-grid');
+        const recentConversationsList = document.getElementById('recent-conversations-list');
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            renderFavorites();
+            renderRecentConversations();
+        });
+
+        function renderFavorites() {
+            const favoriteIds = JSON.parse(localStorage.getItem('favoriteBots')) || [];
+            if (favoriteIds.length === 0) {
+                favoritesGrid.innerHTML = `<p class="placeholder-text">You haven't favorited any agents yet. Click the heart icon on any agent in the <a href="index.html">Explore</a> page to add them here.</p>`;
+                return;
+            }
+            
+            favoritesGrid.innerHTML = '';
+            const favoriteBots = chatbotData.filter(bot => favoriteIds.includes(bot.id.toString()));
+            
+            favoriteBots.forEach((bot) => {
+                const card = document.createElement('div');
+                card.className = 'chatbot-card';
+                card.innerHTML = `
+                    <div class="card-content">
+                         <div class="card-header">
+                            <div class="card-icon-wrapper"><img src="${bot.icon}" alt="" class="card-icon"></div>
+                            <h3>${bot.name}</h3>
+                        </div>
+                        <p class="card-description">${bot.description}</p>
+                        <div class="card-footer">
+                           <span class="category-tag">${bot.category}</span>
+                           <a href="chatbot.html?bot=${bot.id}&name=${encodeURIComponent(bot.name)}" class="launch-link">Launch &rarr;</a>
+                        </div>
+                    </div>
+                `;
+                favoritesGrid.appendChild(card);
+            });
+        }
+
+        function renderRecentConversations() {
+            const allChats = JSON.parse(localStorage.getItem('allChats')) || {};
+            const chatIds = Object.keys(allChats);
+
+            if (chatIds.length === 0) {
+                recentConversationsList.innerHTML = `<p class="placeholder-text">No recent conversations. Start a chat with an agent to see your history here.</p>`;
+                return;
+            }
+            
+            recentConversationsList.innerHTML = '';
+            chatIds.sort((a, b) => allChats[b].lastUpdated - allChats[a].lastUpdated).forEach(chatId => {
+                const chat = allChats[chatId];
+                const bot = chatbotData.find(b => b.id == chat.botId);
+                const firstMessage = chat.messages.length > 0 ? chat.messages[0].text : 'Empty conversation';
+
+                const conversationItem = document.createElement('a');
+                conversationItem.className = 'conversation-item';
+                conversationItem.href = `chatbot.html?chatId=${chatId}`;
+                conversationItem.innerHTML = `
+                    <div class="convo-icon"><img src="${bot ? bot.icon : 'img/default.svg'}" alt=""></div>
+                    <div class="convo-details">
+                        <div class="convo-title">${chat.title}</div>
+                        <div class="convo-excerpt">${firstMessage}</div>
+                    </div>
+                    <div class="convo-timestamp">${new Date(chat.lastUpdated).toLocaleDateString()}</div>
+                `;
+                recentConversationsList.appendChild(conversationItem);
+            });
+        }
+
+        const themeToggle = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme) document.body.classList.add(currentTheme);
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            let theme = document.body.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode';
+            localStorage.setItem('theme', theme);
+        });
+    </script>
+</body>
+</html>
