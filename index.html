@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,16 +36,33 @@
                     <p class="hero-subtitle">Get expert results from 42 specialized AI agents. Your next big idea is just a conversation away.</p>
                     <a href="#gallery" class="cta-button">Explore the Agents</a>
                 </div>
+                <!-- UPDATED: This section is now an animated marquee -->
                 <div class="hero-showcase">
-                    <div class="hero-showcase-grid">
-                        <div class="showcase-card"><span>Creative Writer</span></div>
-                        <div class="showcase-card"><span>Code Refactor</span></div>
-                        <div class="showcase-card"><span>Market Analysis</span></div>
-                        <div class="showcase-card"><span>Travel Planner</span></div>
+                    <div class="marquee">
+                        <div class="marquee-content">
+                            <div class="showcase-card"><span>Creative Writer</span></div>
+                            <div class="showcase-card"><span>Code Refactor</span></div>
+                            <div class="showcase-card"><span>Market Analysis</span></div>
+                            <div class="showcase-card"><span>Travel Planner</span></div>
+                            <div class="showcase-card"><span>SQL Generator</span></div>
+                            <div class="showcase-card"><span>Meeting Assistant</span></div>
+                        </div>
+                        <!-- Content is duplicated for a seamless loop -->
+                        <div class="marquee-content">
+                            <div class="showcase-card"><span>Creative Writer</span></div>
+                            <div class="showcase-card"><span>Code Refactor</span></div>
+                            <div class="showcase-card"><span>Market Analysis</span></div>
+                            <div class="showcase-card"><span>Travel Planner</span></div>
+                            <div class="showcase-card"><span>SQL Generator</span></div>
+                            <div class="showcase-card"><span>Meeting Assistant</span></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- NEW: Gradient Flare separator for visual flow -->
+        <div class="section-flare"></div>
 
         <section class="trust-bar-section">
             <div class="container">
@@ -73,6 +89,16 @@
                 <div id="chatbot-gallery" class="chatbot-grid">
                     <!-- SKELETON LOADER CARDS WILL BE INSERTED HERE INITIALLY -->
                 </div>
+            </div>
+        </section>
+
+        <!-- NEW: Gradient Flare and Final CTA Section -->
+        <div class="section-flare"></div>
+        <section class="final-cta-section">
+            <div class="container">
+                <h2>Ready to Start?</h2>
+                <p>Dive in and explore the future of AI-powered assistance. Your personal dashboard is just one click away.</p>
+                <a href="dashboard.html" class="cta-button">Go to Your Dashboard</a>
             </div>
         </section>
     </main>
@@ -107,181 +133,33 @@
     </template>
 
     <script>
-        const chatbotData = [
-            { id: 1, name: 'Brand Identity Architect', category: 'Creativity', icon: 'img/edit-3.svg', description: 'Generates cohesive brand names, logos, and mission statements.', examples: ['"Suggest names for a sustainable coffee shop"', '"Create a mission statement for a tech startup"'] },
-            { id: 2, name: 'Code Refactor Engine', category: 'Technical', icon: 'img/code.svg', description: 'Analyzes and refactors code for optimal performance and readability.', examples: ['"Refactor this Python function for efficiency"', '"Check my JavaScript for common errors"'] },
-            { id: 3, name: 'Market Trend Forecaster', category: 'Business', icon: 'img/cpu.svg', description: 'Predicts market shifts by analyzing vast datasets and news.', examples: ['"What are the upcoming trends in renewable energy?"', '"Analyze the sentiment for stock XYZ"'] },
-            { id: 4, name: 'Creative Writing Partner', category: 'Creativity', icon: 'img/default.svg', description: 'Helps brainstorm plots, characters, and dialogue for stories.', examples: ['"Help me brainstorm a sci-fi plot twist"', '"Write a short poem about the ocean"'] },
-            { id: 5, name: 'Automated Content Summarizer', category: 'Productivity', icon: 'img/default.svg', description: 'Distills long articles and reports into concise summaries.', examples: ['"Summarize the following article in 3 key points"', '"Give me the gist of this research paper"'] },
-            { id: 6, name: 'SQL Query Generator', category: 'Technical', icon: 'img/default.svg', description: 'Translates natural language questions into precise SQL queries.', examples: ['"Show me all users from California who signed up last week"', '"Count the number of orders over $50"'] },
-            { id: 7, name: 'Personalized Learning Tutor', category: 'Education', icon: 'img/default.svg', description: 'Creates custom lesson plans and quizzes on any subject.', examples: ['"Explain quantum physics to me like I\'m five"', '"Create a 5-question quiz on World War II"'] },
-            { id: 8, name: 'Investment Analysis Bot', category: 'Business', icon: 'img/default.svg', description: 'Provides insights and analysis on stocks and market opportunities.', examples: ['"What are the pros and cons of investing in AAPL?"', '"Compare the P/E ratio of Google and Microsoft"'] },
-            { id: 9, name: 'Meeting Assistant', category: 'Productivity', icon: 'img/default.svg', description: 'Transcribes meetings, identifies action items, and sends summaries.', examples: ['"Summarize our project kickoff meeting"', '"List all action items assigned to John"'] },
-        ];
+        // THIS SCRIPT IS IDENTICAL TO THE ONE YOU PROVIDED AND REMAINS UNCHANGED.
+        // All the new animations are handled by the HTML above and the CSS file.
+        const chatbotData = [ { id: 1, name: 'Brand Identity Architect', category: 'Creativity', icon: 'img/edit-3.svg', description: 'Generates cohesive brand names, logos, and mission statements.', examples: ['"Suggest names for a sustainable coffee shop"', '"Create a mission statement for a tech startup"'] }, { id: 2, name: 'Code Refactor Engine', category: 'Technical', icon: 'img/code.svg', description: 'Analyzes and refactors code for optimal performance and readability.', examples: ['"Refactor this Python function for efficiency"', '"Check my JavaScript for common errors"'] }, { id: 3, name: 'Market Trend Forecaster', category: 'Business', icon: 'img/cpu.svg', description: 'Predicts market shifts by analyzing vast datasets and news.', examples: ['"What are the upcoming trends in renewable energy?"', '"Analyze the sentiment for stock XYZ"'] }, { id: 4, name: 'Creative Writing Partner', category: 'Creativity', icon: 'img/default.svg', description: 'Helps brainstorm plots, characters, and dialogue for stories.', examples: ['"Help me brainstorm a sci-fi plot twist"', '"Write a short poem about the ocean"'] }, { id: 5, name: 'Automated Content Summarizer', category: 'Productivity', icon: 'img/default.svg', description: 'Distills long articles and reports into concise summaries.', examples: ['"Summarize the following article in 3 key points"', '"Give me the gist of this research paper"'] }, { id: 6, name: 'SQL Query Generator', category: 'Technical', icon: 'img/default.svg', description: 'Translates natural language questions into precise SQL queries.', examples: ['"Show me all users from California who signed up last week"', '"Count the number of orders over $50"'] }, { id: 7, name: 'Personalized Learning Tutor', category: 'Education', icon: 'img/default.svg', description: 'Creates custom lesson plans and quizzes on any subject.', examples: ['"Explain quantum physics to me like I\'m five"', '"Create a 5-question quiz on World War II"'] }, { id: 8, name: 'Investment Analysis Bot', category: 'Business', icon: 'img/default.svg', description: 'Provides insights and analysis on stocks and market opportunities.', examples: ['"What are the pros and cons of investing in AAPL?"', '"Compare the P/E ratio of Google and Microsoft"'] }, { id: 9, name: 'Meeting Assistant', category: 'Productivity', icon: 'img/default.svg', description: 'Transcribes meetings, identifies action items, and sends summaries.', examples: ['"Summarize our project kickoff meeting"', '"List all action items assigned to John"'] }];
         const categories = ["Creativity", "Technical", "Business", "Productivity", "Education"];
         let favorites = JSON.parse(localStorage.getItem('favoriteBots')) || [];
-
         const gallery = document.getElementById('chatbot-gallery');
         const searchInput = document.getElementById('search-input');
         const filtersContainer = document.getElementById('category-filters');
         const modal = document.getElementById('details-modal');
         const modalBody = document.getElementById('modal-body');
         const modalCloseBtn = document.getElementById('modal-close-btn');
-
-        function showSkeletonLoaders() {
-            gallery.innerHTML = '';
-            const template = document.getElementById('skeleton-card-template');
-            for (let i = 0; i < 9; i++) {
-                gallery.append(template.content.cloneNode(true));
-            }
-        }
-
+        function showSkeletonLoaders() { gallery.innerHTML = ''; const template = document.getElementById('skeleton-card-template'); for (let i = 0; i < 9; i++) { gallery.append(template.content.cloneNode(true)); } }
         let currentCategory = 'All';
         let currentSearchTerm = '';
-
-        searchInput.addEventListener('input', (e) => {
-            currentSearchTerm = e.target.value.toLowerCase();
-            filterAndRender();
-        });
-
-        filtersContainer.addEventListener('click', (e) => {
-            const btn = e.target.closest('.filter-btn');
-            if (!btn) return;
-            currentCategory = btn.dataset.category;
-            filtersContainer.querySelector('.active').classList.remove('active');
-            btn.classList.add('active');
-            filterAndRender();
-        });
-
-        function filterAndRender() {
-            const filteredBots = chatbotData.filter(bot => {
-                const matchesCategory = currentCategory === 'All' || bot.category === currentCategory;
-                const matchesSearch = bot.name.toLowerCase().includes(currentSearchTerm) || bot.description.toLowerCase().includes(currentSearchTerm);
-                return matchesCategory && matchesSearch;
-            });
-            renderCards(filteredBots);
-        }
-
-        function renderCards(bots) {
-            gallery.innerHTML = '';
-            if (bots.length === 0) {
-                gallery.innerHTML = `<p class="placeholder-text">No agents found. Try adjusting your search or filters.</p>`;
-                return;
-            }
-            bots.forEach((bot, index) => {
-                const isFavorite = favorites.includes(bot.id.toString());
-                const card = document.createElement('div');
-                card.className = 'chatbot-card';
-                card.style.animationDelay = `${index * 30}ms`;
-                card.dataset.id = bot.id;
-                
-                card.innerHTML = `
-                    <button class="favorite-btn ${isFavorite ? 'is-favorite' : ''}" data-id="${bot.id}" aria-label="Favorite this agent">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                    </button>
-                    <div class="card-content">
-                        <div class="card-header">
-                            <div class="card-icon-wrapper"><img src="${bot.icon}" alt="" class="card-icon"></div>
-                            <h3>${bot.name}</h3>
-                        </div>
-                        <p class="card-description">${bot.description}</p>
-                        <div class="card-footer">
-                            <a href="#" class="details-link" data-id="${bot.id}">Details</a>
-                            <a href="chatbot.html?bot=${bot.id}&name=${encodeURIComponent(bot.name)}" class="launch-link">Launch &rarr;</a>
-                        </div>
-                    </div>
-                `;
-                gallery.appendChild(card);
-            });
-        }
-
-        function renderFilters() {
-            filtersContainer.innerHTML = `<button class="filter-btn active" data-category="All">All</button>`;
-            categories.forEach(cat => {
-                filtersContainer.innerHTML += `<button class="filter-btn" data-category="${cat}">${cat}</button>`;
-            });
-        }
-
-        function toggleFavorite(botId, heartIcon) {
-            const botIdStr = botId.toString();
-            const index = favorites.indexOf(botIdStr);
-            if (index > -1) {
-                favorites.splice(index, 1);
-                heartIcon.classList.remove('is-favorite');
-            } else {
-                favorites.push(botIdStr);
-                heartIcon.classList.add('is-favorite');
-            }
-            localStorage.setItem('favoriteBots', JSON.stringify(favorites));
-        }
-
-        gallery.addEventListener('click', e => {
-            const favBtn = e.target.closest('.favorite-btn');
-            const detailsLink = e.target.closest('.details-link');
-
-            if (favBtn) {
-                const botId = favBtn.dataset.id;
-                toggleFavorite(botId, favBtn);
-            }
-            if (detailsLink) {
-                e.preventDefault();
-                const botId = detailsLink.dataset.id;
-                const botData = chatbotData.find(b => b.id == botId);
-                openModal(botData);
-            }
-        });
-        
-        function openModal(bot) {
-            modalBody.innerHTML = `
-                <h2>${bot.name}</h2>
-                <span class="modal-category">${bot.category}</span>
-                <p>${bot.description}</p>
-                <h4>Example Prompts:</h4>
-                <ul>
-                    ${bot.examples.map(ex => `<li>${ex}</li>`).join('')}
-                </ul>
-                 <a href="chatbot.html?bot=${bot.id}&name=${encodeURIComponent(bot.name)}" class="modal-launch-btn">Start Conversation</a>
-            `;
-            modal.classList.add('active');
-        }
-
-        function closeModal() {
-            modal.classList.remove('active');
-        }
-
+        searchInput.addEventListener('input', (e) => { currentSearchTerm = e.target.value.toLowerCase(); filterAndRender(); });
+        filtersContainer.addEventListener('click', (e) => { const btn = e.target.closest('.filter-btn'); if (!btn) return; currentCategory = btn.dataset.category; filtersContainer.querySelector('.active').classList.remove('active'); btn.classList.add('active'); filterAndRender(); });
+        function filterAndRender() { const filteredBots = chatbotData.filter(bot => { const matchesCategory = currentCategory === 'All' || bot.category === currentCategory; const matchesSearch = bot.name.toLowerCase().includes(currentSearchTerm) || bot.description.toLowerCase().includes(currentSearchTerm); return matchesCategory && matchesSearch; }); renderCards(filteredBots); }
+        function renderCards(bots) { gallery.innerHTML = ''; if (bots.length === 0) { gallery.innerHTML = `<p class="placeholder-text">No agents found. Try adjusting your search or filters.</p>`; return; } bots.forEach((bot, index) => { const isFavorite = favorites.includes(bot.id.toString()); const card = document.createElement('div'); card.className = 'chatbot-card'; card.style.animationDelay = `${index * 30}ms`; card.dataset.id = bot.id; card.innerHTML = ` <button class="favorite-btn ${isFavorite ? 'is-favorite' : ''}" data-id="${bot.id}" aria-label="Favorite this agent"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg> </button> <div class="card-content"> <div class="card-header"> <div class="card-icon-wrapper"><img src="${bot.icon}" alt="" class="card-icon"></div> <h3>${bot.name}</h3> </div> <p class="card-description">${bot.description}</p> <div class="card-footer"> <a href="#" class="details-link" data-id="${bot.id}">Details</a> <a href="chatbot.html?bot=${bot.id}&name=${encodeURIComponent(bot.name)}" class="launch-link">Launch &rarr;</a> </div> </div> `; gallery.appendChild(card); }); }
+        function renderFilters() { filtersContainer.innerHTML = `<button class="filter-btn active" data-category="All">All</button>`; categories.forEach(cat => { filtersContainer.innerHTML += `<button class="filter-btn" data-category="${cat}">${cat}</button>`; }); }
+        function toggleFavorite(botId, heartIcon) { const botIdStr = botId.toString(); const index = favorites.indexOf(botIdStr); if (index > -1) { favorites.splice(index, 1); heartIcon.classList.remove('is-favorite'); } else { favorites.push(botIdStr); heartIcon.classList.add('is-favorite'); } localStorage.setItem('favoriteBots', JSON.stringify(favorites)); }
+        gallery.addEventListener('click', e => { const favBtn = e.target.closest('.favorite-btn'); const detailsLink = e.target.closest('.details-link'); if (favBtn) { const botId = favBtn.dataset.id; toggleFavorite(botId, favBtn); } if (detailsLink) { e.preventDefault(); const botId = detailsLink.dataset.id; const botData = chatbotData.find(b => b.id == botId); openModal(botData); } });
+        function openModal(bot) { modalBody.innerHTML = ` <h2>${bot.name}</h2> <span class="modal-category">${bot.category}</span> <p>${bot.description}</p> <h4>Example Prompts:</h4> <ul> ${bot.examples.map(ex => `<li>${ex}</li>`).join('')} </ul> <a href="chatbot.html?bot=${bot.id}&name=${encodeURIComponent(bot.name)}" class="modal-launch-btn">Start Conversation</a> `; modal.classList.add('active'); }
+        function closeModal() { modal.classList.remove('active'); }
         modalCloseBtn.addEventListener('click', closeModal);
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) closeModal();
-        });
-        
-        const themeToggle = document.getElementById('theme-toggle');
-        const currentTheme = localStorage.getItem('theme');
-        if (currentTheme) document.body.classList.add(currentTheme);
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            let theme = document.body.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode';
-            localStorage.setItem('theme', theme);
-        });
-
-        // Scroll-Triggered Fade-In Animation Logic
-        document.addEventListener("DOMContentLoaded", () => {
-            const scrollElements = document.querySelectorAll(".fade-in-on-scroll");
-            const elementObserver = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("is-visible");
-                        elementObserver.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-            scrollElements.forEach((el) => elementObserver.observe(el));
-            
-            showSkeletonLoaders();
-            setTimeout(() => {
-                renderFilters();
-                filterAndRender();
-            }, 1000);
-        });
+        modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+        const themeToggle = document.getElementById('theme-toggle'); const currentTheme = localStorage.getItem('theme'); if (currentTheme) document.body.classList.add(currentTheme); themeToggle.addEventListener('click', () => { document.body.classList.toggle('dark-mode'); let theme = document.body.classList.contains('dark-mode') ? 'dark-mode' : 'light-mode'; localStorage.setItem('theme', theme); });
+        document.addEventListener("DOMContentLoaded", () => { const scrollElements = document.querySelectorAll(".fade-in-on-scroll"); const elementObserver = new IntersectionObserver((entries) => { entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add("is-visible"); elementObserver.unobserve(entry.target); } }); }, { threshold: 0.1 }); scrollElements.forEach((el) => elementObserver.observe(el)); showSkeletonLoaders(); setTimeout(() => { renderFilters(); filterAndRender(); }, 1000); });
     </script>
 </body>
 </html>
