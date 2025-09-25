@@ -11,7 +11,7 @@ export const chatbotData = [
     
     // CRITICAL: Specify the embed type and the direct URL for the iframe
     embedType: 'iframe',
-    embedUrl: 'https://chatbot.getmindpal.com/social-media-strategy-canvas-7t3'
+    embedUrl: 'https://workflow.getmindpal.com/smc-a82lfig4qeeazhoc'
   },
   { 
     id: 'brand-identity-architect', 
