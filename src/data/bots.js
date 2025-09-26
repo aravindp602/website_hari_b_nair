@@ -7,22 +7,22 @@ export const chatbotData = [
     category:'Business',
     icon:'/img/default.svg',
     description:'Crafts engaging posts and growth strategies for various platforms.',
-    examples:[], // Examples are not needed for iframe embeds
+    Examples :[], // Examples are not needed for iframe embeds
     
     // CRITICAL: Specify the embed type and the direct URL for the iframe
     embedType: 'iframe',
     embedUrl: 'https://workflow.getmindpal.com/smc-a82lfig4qeeazhoc'
   },
   { 
-    id: 'brand-identity-architect', 
-    name: 'Brand Identity Architect', 
+    id: 'Business ', 
+    name: 'Business-naming-bot', 
     category: 'Creativity', 
     icon: '/img/edit-3.svg', 
-    description: 'Generates cohesive brand names, logos, and mission statements.', 
+    description: 'Generates unique business names based on your inputs', 
     examples: [],
 
     embedType: 'iframe',
-    embedUrl: 'https://chatbot.getmindpal.com/brand-identity-architect'
+    embedUrl: 'https://workflow.getmindpal.com/brand-naming-hj4dwYUt2meyyodk'
   },
   { 
     id: 'code-refactor-engine', 
