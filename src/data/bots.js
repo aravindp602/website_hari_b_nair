@@ -44,6 +44,17 @@ export const chatbotData = [
     embedType: 'iframe',
     embedUrl: 'https://workflow.getmindpal.com/rtb--reasons-to-believe--JTcQj1Q8pSXDELSn' // Replace with the real URL
   },
+
+  // Bot 5
+  {
+  id: 'Neil the creative director',
+  name: 'Neil the Creative Director',
+  category: 'Creativity',
+  icon : '/img/edit-3.svg',
+  description: 'An AI-powered creative director that helps brainstorm and refine creative concepts for marketing campaigns, branding, and content creation.',
+  embedType : 'iframe',
+  embedUrl : 'https://workflow.getmindpal.com/creative-strategy-canvas-kwOzZWvzc9nHPf0o' // Replace with the real URL
+}
   
   // ... continue this pattern for all 42 of your bots ...
 ];
