@@ -36,13 +36,13 @@ export const chatbotData = [
   
   // Bot 4
   { 
-    id: 'code-refactor-engine', 
-    name: 'Code Refactor Engine', 
+    id: 'reason-to-believe-rtb', 
+    name: 'Reason To Believe (RTB)', 
     category: 'Technical', 
     icon: '/img/code.svg', 
-    description: 'Analyzes and refactors code for optimal performance and readability.',
+    description: 'Generates strong reasons to believe for your brand messaging.',
     embedType: 'iframe',
-    embedUrl: 'https://workflow.getmindpal.com/code-refactor-url' // Replace with the real URL
+    embedUrl: 'https://workflow.getmindpal.com/rtb--reasons-to-believe--JTcQj1Q8pSXDELSn' // Replace with the real URL
   },
   
   // ... continue this pattern for all 42 of your bots ...
